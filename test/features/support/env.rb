@@ -1,15 +1,14 @@
+require 'watir-webdriver'
+
 if ENV["HEADLESS"] then
-  require "celerity"
-  browser = Celerity::Browser.new
-  INDEX_OFFSET = 0
-  WEBDRIVER = false
+  browser = Watir::Browser.new :phantomjs
 else
-  require 'watir-webdriver'
-  require 'watir-webdriver/extensions/wait'
+  #require 'watir-webdriver/extensions/wait'
   browser = Watir::Browser.new :firefox
+end
+
   INDEX_OFFSET = -1
   WEBDRIVER = true
-end
  
 Before do
   @browser = browser
