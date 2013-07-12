@@ -2,7 +2,7 @@
 set -o errexit
 
 #Move to portal test dir
-cd WatirExample/test
+cd test
 
 #Make sure we have up to date gems installed as specified in Gemfile.lock
 bundle install
